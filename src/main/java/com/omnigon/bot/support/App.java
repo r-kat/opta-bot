@@ -29,9 +29,4 @@ public class App {
         public static final String SCHEDULE = WEBSITE_URL + "/schedule/schedule-and-results";
     }
 
-    public static class Var {
-        public static final String APP_SECRET = "appSecret";
-        public static final String VERIFY_TOKEN = "verifyToken";
-        public static final String PAGE_ACCESS_TOKEN = "pageAccessToken";
-    }
 }
