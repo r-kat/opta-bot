@@ -1,13 +1,3 @@
-/*
- * Copyright (c) 2017 Omnigon Communications, LLC. All rights reserved.
- *
- * This software is the confidential and proprietary information of Omnigon Communications, LLC
- * ("Confidential Information"). You shall not disclose such Confidential Information and shall access and use it only
- * in accordance with the terms of the license agreement you entered into with Omnigon Communications, LLC, its
- * subsidiaries, affiliates or authorized licensee. Unless required by applicable law or agreed to in writing, this
- * Confidential Information is provided on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the license agreement for the specific language governing permissions and limitations.
- */
 package com.omnigon.bot;
 
 import com.github.messenger4j.MessengerPlatform;
@@ -20,12 +10,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 /**
- * Entry point for the Spring Boot Application. <br>
+ * Entry point for the Spring Boot Application.
  *
+ * <p>
  * The Spring Context will be bootstrapped and the application will be configured properly.
- * {@code MessengerSendClient} will be exposed as a singleton Spring Bean, so it is injectable.
+ * In addition a {@code MessengerSendClient} will be exposed as a singleton Spring Bean, so it is injectable.
+ * </p>
  *
- * @author rajesh.kathgave
+ * @author Max Grabenhorst
  */
 @SpringBootApplication
 public class Application {
@@ -38,8 +30,8 @@ public class Application {
      * @param pageAccessToken the generated {@code Page Access Token}
      */
     @Bean
-    public MessengerSendClient messengerSendClient(@Value("messenger4j.pageAccessToken") String pageAccessToken) {
-        logger.debug("Initializing MessengerSendClient");
+    public MessengerSendClient messengerSendClient(@Value("${messenger4j.pageAccessToken}") String pageAccessToken) {
+        logger.debug("Initializing MessengerSendClient - pageAccessToken: {}", pageAccessToken);
         return MessengerPlatform.newSendClientBuilder(pageAccessToken).build();
     }
 
