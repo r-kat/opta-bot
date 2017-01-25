@@ -19,8 +19,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import static com.omnigon.bot.support.App.Var.PAGE_ACCESS_TOKEN;
-
 /**
  * Entry point for the Spring Boot Application. <br>
  *
