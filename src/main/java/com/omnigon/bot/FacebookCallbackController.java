@@ -24,6 +24,7 @@ import com.github.messenger4j.send.*;
 import com.github.messenger4j.send.buttons.Button;
 import com.github.messenger4j.send.templates.ButtonTemplate;
 import com.github.messenger4j.send.templates.GenericTemplate;
+import com.github.messenger4j.send.templates.ReceiptTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,8 +62,8 @@ public class FacebookCallbackController {
      * @param sendClient  initialized {@code MessengerSendClient}
      */
     @Autowired
-    public FacebookCallbackController(@Value("a.appSecret") String appSecret,
-                                      @Value("a.verifyToken") String verifyToken,
+    public FacebookCallbackController(@Value("messenger4j.appSecret") String appSecret,
+                                      @Value("messenger4j.verifyToken") String verifyToken,
                                       MessengerSendClient sendClient) {
         logger.debug("Initializing facebook controller");
         this.receiveClient = MessengerPlatform.newReceiveClientBuilder(appSecret, verifyToken)

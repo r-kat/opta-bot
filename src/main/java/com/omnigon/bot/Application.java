@@ -38,7 +38,7 @@ public class Application {
      * @param pageAccessToken the generated {@code Page Access Token}
      */
     @Bean
-    public MessengerSendClient messengerSendClient(@Value("a.pageAccessToken") String pageAccessToken) {
+    public MessengerSendClient messengerSendClient(@Value("messenger4j.pageAccessToken") String pageAccessToken) {
         logger.debug("Initializing MessengerSendClient");
         return MessengerPlatform.newSendClientBuilder(pageAccessToken).build();
     }
